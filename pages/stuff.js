@@ -1,5 +1,6 @@
 import Head from "next/head";
 import NavBar from "../components/Navbar";
+import Footer from "../components/Footer";
 import styles from "../styles/Home.module.css";
 
 export default function About() {
@@ -22,7 +23,7 @@ export default function About() {
         </div>
 
       </main>
-      <footer className={styles.footer}>© Luc Blassel. 2020</footer>
+      <Footer/>
       </div>
     </NavBar>
   );

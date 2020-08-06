@@ -5,6 +5,7 @@ import { getSortedPostData } from "../lib/posts";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faBriefcase, faGraduationCap } from '@fortawesome/free-solid-svg-icons'
 import { faLinkedin, faGithub, faOrcid} from "@fortawesome/free-brands-svg-icons"
+import Footer from "../components/Footer"
 
 export default function Home({ allPostsData }) {
   return (
@@ -69,7 +70,7 @@ export default function Home({ allPostsData }) {
         </div>
       </main>
 
-      <footer className={styles.footer}>© Luc Blassel. 2020</footer>
+      <Footer/>
     </div>
   );
 }
