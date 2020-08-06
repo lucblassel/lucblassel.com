@@ -44,12 +44,13 @@
   border: 1px solid #eaeaea;
   border-radius: 10px;
   background-color: #fdfdfd;
+  overflow: scroll;
 }
 
 .main code {
   background: #fdfdfd;
-  border: 1px solid #eaeaea;
-  border-radius: 5px;
+  /* border: 1px solid #eaeaea; */
+  /* border-radius: 5px; */
   font-size: 90%;
   padding: 0 .5%;
   font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
