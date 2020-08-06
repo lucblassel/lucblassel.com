@@ -20,7 +20,7 @@
 .navbutton:hover,
 .navbutton:focus,
 .navbutton:active {
-    color: #0070f3;
+    color: var(--link-color);
 }
 
 .content {

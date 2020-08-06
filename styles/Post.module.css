@@ -43,10 +43,12 @@
   padding: 1rem;
   border: 1px solid #eaeaea;
   border-radius: 10px;
+  background-color: #fdfdfd;
 }
 
 .main code {
-  background: #e1e1e1;
+  background: #fdfdfd;
+  border: 1px solid #eaeaea;
   border-radius: 5px;
   font-size: 90%;
   padding: 0 .5%;
