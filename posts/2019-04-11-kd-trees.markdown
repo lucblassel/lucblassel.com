@@ -11,8 +11,6 @@ feature: https://upload.wikimedia.org/wikipedia/commons/f/f7/Binary_tree.svg
 This is a little writeup of a project I did in collaboration with a classmate while studying a algorithmic complexity class. We implemented a faster, but still exact, $k$ nearest neighbors classifier based on k-d trees. I learned a lot and hope this can be interesting to some of you. 
 <!--more-->
 
-<!-- $$\require{amsmath}$$ -->
-
 # 1 Introduction
 
 ## 1.1 What is classification?
@@ -72,7 +70,7 @@ In the naive approach we calculate the distance of the unknown point to all the 
 
 ### 2.3 Exact KNN versus approximate KNN
 
-There already exist faster versions of the $k$-NN algorithm that identify regions in our search space, within which to compute distances so we don't compute distances for every point in the dataset, some of these being [LSH](https://www.youtube.com/watch?v=LqcwaW2YE_c) *(Locality Sensitive Hashing)* and an approximate version of [k-d trees](https://www.youtube.com/watch?v=Y4ZgLlDfKDg) *(Both of the links are videos by Victor Lavrenko who was a great ressource for us, so thanks Victor!)*. However most of these sped-up methods are based on heuristics or approximations, meaning we can't be sure that the actual nearest neighbors are in the searched sub-space. What we wanted to do is still keep an exact method for $k$-NN.  
+There already exist faster versions of the $k$-NN algorithm that identify regions in our search space, within which to compute distances so we don't compute distances for every point in the dataset, some of these being <a></a>[LSH](https://www.youtube.com/watch?v=LqcwaW2YE_c) *(Locality Sensitive Hashing)* and an approximate version of <a></a>[k-d trees](https://www.youtube.com/watch?v=Y4ZgLlDfKDg) *(Both of the links are videos by Victor Lavrenko who was a great ressource for us, so thanks Victor!)*. However most of these sped-up methods are based on heuristics or approximations, meaning we can't be sure that the actual nearest neighbors are in the searched sub-space. What we wanted to do is still keep an exact method for $k$-NN.  
 
 ## 3 What did we implement?
 
@@ -120,7 +118,7 @@ implementation.
 
 ### 3.2 k nearest neighbor search
 
-Now that we have our [data organized as a k-d tree](#kdtree), we must use this data-structure to our advantage as
+Now that we have our <a></a>[data organized as a k-d tree](#kdtree), we must use this data-structure to our advantage as
 we search for the k nearest neighbors. The search begins with a tree traversal similar to the one we would
 do if we wanted to insert the point we want to classify. So if we take our example of a 2−$d$ space and
 we want to find the nearest neighbor of the point $(4,8)$. To calculate distances we will use the Euclidean
@@ -170,7 +168,7 @@ The pruning works in the exact same way except that instead of comparing the dim
 
 Therefore the algorithm to find the $k$-nearest neighbors becomes the following :  
 
-![kNN search algrithm]({{site.basurl}}/assets/images/kd_trees/nnalgo.svg)  
+![kNN search algrithm](/images/kd_trees/nnalgo.svg)  
 `point` is the data point for which we want to find neighbors, `node` is the considered node of the $k-d$ tree (so during the initial execution of `nearestNeighbors` `node = root`). `candidates` is the priority queue where both the $k$ best nodes of our tree and their distances to `point` are stored. `distMin` is the biggest distance in `candidates` *(so the biggest of the $k$ minimum distances)*  
 We do not have to return $candidates$ because it is modified directly by the function. we can then see the $k$ nearest neighbors in the final candidate list. To assign a label to the point we simply look at the labels of all the points in the list $candidates$.  
 
@@ -279,7 +277,7 @@ runtime depending on $d$ the dimension of the dataset:
 
 As we can see, changes in $k$ have almost no effect of the runtime of our function. When changing dimensions however we can see that $d$ has a significant impact on runtime. $p$ also has a very pronounced effect on runtime. The curve with the $10\%$ legend is the case where $p= 0.1\cdot n$.  
 
-As to the accuracy of our classifications we tested our method on the [Iris dataset](https://en.wikipedia.org/wiki/Iris_flower_data_set) for which we only selected two classes (out of the three).When we select the $setosa$ and $versicolor$ varieties, since they are very distinct groups, $k$-NN is very accurate :
+As to the accuracy of our classifications we tested our method on the <a></a>[Iris dataset](https://en.wikipedia.org/wiki/Iris_flower_data_set) for which we only selected two classes (out of the three).When we select the $setosa$ and $versicolor$ varieties, since they are very distinct groups, $k$-NN is very accurate :
 
 ![classification of setosa and versicolor](/images/kd_trees/irisClass.png)
 
@@ -302,7 +300,7 @@ The cross validation results are similar to the one with only the 2 species:
 ![Full iris CV](/images/kd_trees/iris3Cv.png)
 
 
-We finally decided to try on a dataset which a higher dimensionality and a higher number of classes: the [leaf dataset](https://www.kaggle.com/c/leaf-classification/data) (it contains images, but we used the `train.csv` file which has $n=990$, $d=192$ and $99$ different classes). The CV results stayed quite high without very long runtimes:  
+We finally decided to try on a dataset which a higher dimensionality and a higher number of classes: the <a></a>[leaf dataset](https://www.kaggle.com/c/leaf-classification/data) (it contains images, but we used the `train.csv` file which has $n=990$, $d=192$ and $99$ different classes). The CV results stayed quite high without very long runtimes:  
 ![CV results on leaf dataset](/images/kd_trees/leafCv2.png)
 
 ## 4 Future works to be done
@@ -322,6 +320,6 @@ In various classification tasks, points are not necessarily in euclidean space, 
 
 ## A code
 
-The code is available on [this repository](https://github.com/zlanderous/kd-trees-KNN).
+The code is available on <a></a>[this repository](https://github.com/zlanderous/kd-trees-KNN).
 
 
