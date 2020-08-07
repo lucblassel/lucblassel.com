@@ -1,13 +1,9 @@
 ---
-layout: post
 title: Implementing linear regression, math and Python!
-mathjax: true
 date:   2020-01-09 10:00:00 
 excerpt_separator: <!--more-->
 tags: [linear model, machine-learning, Python, code, regression]
-comments: true
 feature: https://upload.wikimedia.org/wikipedia/commons/e/ed/Residuals_for_Linear_Regression_Fit.png
-align: true
 ---
 
 Today I want to explain linear regression. It is one of the simplest statistical learning models and can be implemented in only a couple lines of Python code, in an efficient manner. Being so simple however does not mean it is not useful, in fact it can be very practical to explore relationships between features in a dataset and make predictions on a target value. Therefore I think it's important to understand how the method works and how the different parameters have an effect on the outcome. 

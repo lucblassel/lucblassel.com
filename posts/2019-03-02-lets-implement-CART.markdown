@@ -1,11 +1,8 @@
 ---
-layout: post
 title: Let's implement the CART Algorithm
 date: 2019-03-02 10:00:00 
-mathjax: true
 excerpt_separator: <!--more-->
 tags: [decision-trees, machine-learning, Python, code]
-comments: true
 feature: https://images.unsplash.com/photo-1515879218367-8466d910aaa4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80
 ---
 

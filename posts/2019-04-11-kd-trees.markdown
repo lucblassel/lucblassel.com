@@ -1,11 +1,7 @@
 ---
-layout: post
 title: "KD-trees: Classification of n points in d-sized Euclidean space"
 date: 2019-04-11 10:00:00 
-mathjax: true
 excerpt_separator: <!--more-->
-project: true
-comments: true
 feature: https://upload.wikimedia.org/wikipedia/commons/f/f7/Binary_tree.svg
 ---
 This is a little writeup of a project I did in collaboration with a classmate while studying a algorithmic complexity class. We implemented a faster, but still exact, $k$ nearest neighbors classifier based on k-d trees. I learned a lot and hope this can be interesting to some of you. 

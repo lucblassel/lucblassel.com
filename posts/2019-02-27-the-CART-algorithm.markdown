@@ -1,11 +1,8 @@
 ---
-layout: post
 title: The CART Algorithm
 date: 2019-02-27 10:00:00 
-mathjax: true
 excerpt_separator: <!--more-->
 tags: [decision-trees, machine-learning]
-comments: true
 feature: https://images.unsplash.com/photo-1509228468518-180dd4864904?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80
 ---
 

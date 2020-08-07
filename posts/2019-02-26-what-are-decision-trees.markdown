@@ -1,12 +1,8 @@
 ---
-layout: post
-mathjax: true
 title:  "What are decision trees?"
 date:   2019-02-26 12:53:20 
 excerpt_separator: <!--more-->
-# project: true
 tags: [decision-trees, machine-learning]
-comments: true
 feature: https://images.unsplash.com/photo-1546556874-fba2d7d6926e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=975&q=80
 ---
 
@@ -102,4 +98,4 @@ Stay tuned for <a></a>[part 2][6] where I will go over the CART algorithm for bu
 [3]: <https://en.wikipedia.org/wiki/Sepal>
 [4]: <https://en.wikipedia.org/wiki/Recursive_partitioning>
 [5]: <https://en.wikipedia.org/wiki/Root-mean-square_deviation>
-[6]: </posts/2019-02-27-the-CART-algorithm>
+[6]: </blog/2019-02-27-the-CART-algorithm>
