@@ -9,7 +9,7 @@ import Footer from "../components/Footer";
 
 export default function Blog({ allPostsData }) {
   return (
-    <NavBar>
+    <NavBar active="blog">
       <div className={styles.container}>
         <Head>
           <title>Luc Blassel - Blog</title>

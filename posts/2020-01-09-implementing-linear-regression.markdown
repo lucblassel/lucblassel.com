@@ -183,7 +183,7 @@ Ok so I guess we can start getting into the implementation part of this post. I'
 # How can we implement linear regression ?
 
 ### Getting a dataset
-Ok so first things first we need some data on which to train our linear regressor, I'm going to stick to basics an use the <a></a>[boston housing dataset](link_here), where we try to guess the median monetary value of different homes depending on several features like number of rooms, crime rate, distance to nearest job center, etc...  
+Ok so first things first we need some data on which to train our linear regressor, I'm going to stick to basics an use the <a></a>[boston housing dataset](https://www.cs.toronto.edu/~delve/data/boston/bostonDetail.html), where we try to guess the median monetary value of different homes depending on several features like number of rooms, crime rate, distance to nearest job center, etc...  
 This dataset is available in the `scikit-learn` library in Python and we are going to split it into a training dataset with $80\%$ of the examples and keep the remaining $20\%$ as a testing set on which we can evaluate the performance of our linear regressor. I wrote a small dataset splitting function, and loaded the data.
 
 ~~~python
@@ -323,4 +323,4 @@ $$
 
 In this case uor regressor and the `scikit-learn` regressor both have an RMSE of $4.9277$, with only a difference of $0.00008\%$, so our model and the state of the art have an identical performance, which is quite reassuring.  
 
-In a next post I'll talk about regularization and how we can add it to our linear regressor. In the meantime I hope you've liked this little write-up and if you want to take a closer look at the code it's all available in this repo: <a></a>[github.com/lucblassel/website_projects](https://github.com/lucblassel/website_projects/tree/master/linear_regression)
+In a next post I'll talk about regularization and how we can add it to our linear regressor. In the meantime I hope you've liked this little write-up and if you want to take a closer look at the code it's all available in this repo: <a></a>[github.com/lucblassel/website_projects](https://github.com/lucblassel/website_projects/)

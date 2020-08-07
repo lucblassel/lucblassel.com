@@ -141,9 +141,33 @@
   border-color: var(--link-color);
 }
 
+.portrait {
+  border-radius: 50%;
+  width:30%;
+  margin: 3rem;
+  /* text-align: center; */
+}
+
 @media (max-width: 600px) {
   .grid {
     width: 100%;
     flex-direction: column;
   }
+}
+
+.resume {
+  margin-top: 3rem;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+}
+
+.subsection {
+  text-align: left;
+}
+
+.resumeCardContainer {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
 }

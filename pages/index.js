@@ -17,7 +17,7 @@ export default function Home({ allPostsData }) {
 
       <main className={styles.main}>
         <h1 className={styles.title}>LucBlassel.com</h1>
-
+        <img src="/images/me.jpg" alt="my face" className={styles.portrait}/>
         <p className={styles.description}>
           PhD. student in computational Biology <br />- interested in Machine
           Learning -
@@ -34,7 +34,7 @@ export default function Home({ allPostsData }) {
           <Link href="/blog">
             <a href="" className={styles.card}>
               <h3>Blog</h3>
-              <p>Some blog posts I have written</p>
+              <p>Some posts I have written</p>
             </a>
           </Link>
 

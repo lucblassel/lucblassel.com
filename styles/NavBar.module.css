@@ -23,6 +23,13 @@
     color: var(--link-color);
 }
 
+.active {
+    color: var(--link-color);
+    font-size: 2em;
+    margin-right: 1rem;
+    margin-left: 1rem;
+}
+
 .content {
     padding-top: 4rem; 
 }
