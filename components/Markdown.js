@@ -1,8 +1,9 @@
 import React from 'react';
-import ReactMarkdown from 'react-markdown';
+import ReactMarkdown from 'react-markdown/with-html';
 import RemarkMathPlugin from 'remark-math';
 import { BlockMath, InlineMath } from 'react-katex';
 import CodeBlock from "./CodeBlock";
+
 
 const _mapProps = (props) => ({
   ...props,
@@ -14,7 +15,7 @@ const _mapProps = (props) => ({
     ...props.renderers,
     math: ({ value }) => <BlockMath>{value}</BlockMath>,
     inlineMath: ({ value }) => <InlineMath>{value}</InlineMath>,
-    code: CodeBlock
+    code: CodeBlock,
   }
 });
 

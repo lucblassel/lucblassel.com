@@ -1,11 +1,8 @@
 ---
-layout: post
 title: The CART Algorithm
 date: 2019-02-27 10:00:00 
-mathjax: true
 excerpt_separator: <!--more-->
 tags: [decision-trees, machine-learning]
-comments: true
 feature: https://images.unsplash.com/photo-1509228468518-180dd4864904?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80
 ---
 
@@ -34,19 +31,19 @@ Sums are represented by the $\Sigma$ symbol *(read as "sigma")*. The value under
 $$
 \sum^3_{i=1} i^2 = 1^2 + 2^2 + 3^2 = 14
 $$
+If you have any more questions about mathematical notation I would suggest you consult <a></a>[this wikipedia page][1] which is quite comprehensive.  
 
-If you have any more questions about mathematical notation I would suggest you consult [this wikipedia page](https://en.wikipedia.org/wiki/List_of_mathematical_symbols) which is quite comprehensive.  
 
 ### in this article
 
- - $Y$ denotes the target variable *(in our [iris dataset]({{site.baseurl}}{% link _posts/2019-02-26-what-are-decision-trees.markdown %}) it would be the species)*
+ - $Y$ denotes the target variable *(in our <a></a>[iris dataset][2] it would be the species)*
  - $X_{\{1,\cdots,p\}}$ are the $p$ explanatory variables *(in the iris dataset: petal length and width, and sepal length and width, so $\ p=4$)*
   
 For a classification tree $Y_i \in \{1,2,\cdots,k\}$, where $k$ is the number of possible classes.  
 On the other hand for a regression tree $Y_i \in \mathbb{R}$ *(with $\mathbb{R}$  the set of real numbers)*  
 *(NB. in any post I might use "variable" and "feature" interchangeably because they essentially mean the same thing)*
 
-In decision trees nodes represent a split in data, in this post I will usually call splits $S$ and represent them as the 2 opposite sets $\mathcal{A}$ and $\overline{\mathcal{A}}$, where $\mathcal{A}$ is the set that goes to the left branch of the split and $\overline{\mathcal{A}}$ the set that goes to the right branch of the split. For example, the first split of [part 1]({{site.baseurl}}{% link _posts/2019-02-26-what-are-decision-trees.markdown %})'s simple tree, that has the condition $x_3 \leq 1.9$ will be noted as:  
+In decision trees nodes represent a split in data, in this post I will usually call splits $S$ and represent them as the 2 opposite sets $\mathcal{A}$ and $\overline{\mathcal{A}}$, where $\mathcal{A}$ is the set that goes to the left branch of the split and $\overline{\mathcal{A}}$ the set that goes to the right branch of the split. For example, the first split of <a></a>[part 1][2]'s simple tree, that has the condition $x_3 \leq 1.9$ will be noted as:  
 
 $$
 S = \{x_3 \leq 1.9\},\ \{x_3 > 1.9\}
@@ -60,10 +57,10 @@ $$
 Steps in the CART decision tree inference algorithm
 ---------------------------------------------------
 ## What is CART?
-CART stands for **C**lassification **A**nd **R**egression **T**rees, it is an algorithm developed by [Leo Breiman *et. al* in 1984](https://www.taylorfrancis.com/books/9781351460491) designed for inferring decision trees. It relies on evaluating possible splits at each node in our tree and choosing the best one. 
+CART stands for **C**lassification **A**nd **R**egression **T**rees, it is an algorithm developed by <a></a>[Leo Breiman *et. al* in 1984][3] designed for inferring decision trees. It relies on evaluating possible splits at each node in our tree and choosing the best one. 
 
 ## splitting the data
-To infer a tree we need to choose the best possible split at each node, and to do that we need to know what those splits are. As we saw in [part 1]({{site.baseurl}}{% link _posts/2019-02-26-what-are-decision-trees.markdown %}) a split is only ever done on one feature  
+To infer a tree we need to choose the best possible split at each node, and to do that we need to know what those splits are. As we saw in <a></a>[part 1][2] a split is only ever done on one feature  
 There are two types of features, hence two types of splits:
 
  - **numerical features**: these have number values (usually continuous) with no fixed set of values. These values intrinsically have an order.
@@ -125,7 +122,7 @@ $$
 \end{aligned}
 $$
 
-It is easy to see that $S_1 = S_2$, that symmetry is why on out number of possible splits we have $2^{k-1}$ instead of simply $2^k$. The explanation for why it is $2^{k-1}-1$ and not $2^{k-1}$ is the same as for numerical features, because if $\mathcal{A}=\{red,\ blue,\ green\}$ then Our splits has all the points one one side and and empty set on the other, so it is not a split, so we remove that possibility and that's how we end up with $2^{k-1}-1$ *(thats also why we used $\mathcal{A} \subset \{1,\cdots,k\}$ instead of $\mathcal{A} \subseteq \{1,\cdots,k\}$ when we [defined our categorical splits](#categorical-splits-definition)).*   
+It is easy to see that $S_1 = S_2$, that symmetry is why on out number of possible splits we have $2^{k-1}$ instead of simply $2^k$. The explanation for why it is $2^{k-1}-1$ and not $2^{k-1}$ is the same as for numerical features, because if $\mathcal{A}=\{red,\ blue,\ green\}$ then Our splits has all the points one one side and and empty set on the other, so it is not a split, so we remove that possibility and that's how we end up with $2^{k-1}-1$ *(thats also why we used $\mathcal{A} \subset \{1,\cdots,k\}$ instead of $\mathcal{A} \subseteq \{1,\cdots,k\}$ when we* <a></a>[defined our categorical splits](http://google.com) *).*   
 
 So now we have all of the possible splits in our data, but how do we choose the best one?
 
@@ -190,7 +187,7 @@ The basic algorithm is actually quite simple:
 We can implement it in a recursive manner thusly:
 
 
-```` 
+```` c
 function infer_tree(dataset) {
 
     #stopping condition
@@ -204,8 +201,8 @@ function infer_tree(dataset) {
     # choose split with maximum decrease
     best_split = splits[max(impurities)] 
     
-    left_dataset = best_split[0]
-    right_dataset = best_split[1]
+    left_dataset = best_split.left
+    right_dataset = best_split.right
 
     #recursive part
     infer_tree(left_dataset)
@@ -220,5 +217,10 @@ This is only a part of the algorithm, it results in a tree that grows until all 
 
 ## Conclusion
 
-I hope you learned something on how to build decision trees, and go check out [part 3]({{site.baseurl}}{%link _posts/2019-03-02-lets-implement-CART.markdown%}) to see a `Python` implementation of this algorithm. 
+I hope you learned something on how to build decision trees, and go check out <a></a>[part 3][4] to see a `Python` implementation of this algorithm. 
 
+
+[1]: <https://en.wikipedia.org/wiki/List_of_mathematical_symbols>
+[2]: </blog/2019-02-26-what-are-decision-trees>
+[3]: <https://www.taylorfrancis.com/books/9781351460491>
+[4]: </blog/2019-03-02-lets-implement-CART>

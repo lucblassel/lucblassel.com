@@ -1,9 +1,10 @@
 import { format } from "date-fns";
 
 export default function DateBlock({ dateString }) {
-  if (dateString == undefined) {
-    return <div>undefined</div>
+  try {
+    const date = new Date(dateString)
+    return <time dateTime={dateString}>{format(date, "LLLL d, yyyy")}</time>;
+  } catch {
+    return <div></div>
   }
-  const date = new Date(dateString)
-  return <time dateTime={dateString}>{format(date, "LLLL d, yyyy")}</time>;
 }

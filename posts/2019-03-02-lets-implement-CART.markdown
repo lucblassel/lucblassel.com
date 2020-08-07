@@ -1,17 +1,14 @@
 ---
-layout: post
 title: Let's implement the CART Algorithm
 date: 2019-03-02 10:00:00 
-mathjax: true
 excerpt_separator: <!--more-->
 tags: [decision-trees, machine-learning, Python, code]
-comments: true
 feature: https://images.unsplash.com/photo-1515879218367-8466d910aaa4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80
 ---
 
-This is Part 3 of my decision trees series. This time around we are going to code a decision tree in Python. So I'm going to try to make this code as understandable as possible, but if you are not familiar with [Object Oriented Programming (OOP)](https://en.wikipedia.org/wiki/Object-oriented_programming) or [recursion](https://en.wikipedia.org/wiki/Recursion_(computer_science)) you might have a tougher time.  
+This is Part 3 of my decision trees series. This time around we are going to code a decision tree in Python. So I'm going to try to make this code as understandable as possible, but if you are not familiar with <a></a>[Object Oriented Programming (OOP)](https://en.wikipedia.org/wiki/Object-oriented_programming) or <a></a>[recursion](https://en.wikipedia.org/wiki/Recursion_(computer_science)) you might have a tougher time.  
 <!--more-->
-To make data handling easier, we are going to be using the wonderful `pandas` package, so if you don't know how to use it I highly recommend you learn to by reading [their intro to pandas](https://pandas.pydata.org/pandas-docs/stable/getting_started/10min.html). *(there are also very good tutorials by [Chris Albon](https://chrisalbon.com/) but they are more focused on a specific feature)*, but I'll just quickly go over the most important points. In `pandas` tabular data is stored in a `DataFrame` and these objects allow us to have named columns and rows and to easily subset data with these names. Ok so let's create a `DataFrame` from a subset of our iris data.
+To make data handling easier, we are going to be using the wonderful `pandas` package, so if you don't know how to use it I highly recommend you learn to by reading <a></a>[their intro to pandas](https://pandas.pydata.org/pandas-docs/stable/getting_started/10min.html). *(there are also very good tutorials by <a></a>[Chris Albon](https://chrisalbon.com/) but they are more focused on a specific feature)*, but I'll just quickly go over the most important points. In `pandas` tabular data is stored in a `DataFrame` and these objects allow us to have named columns and rows and to easily subset data with these names. Ok so let's create a `DataFrame` from a subset of our iris data.
 
 ~~~python
 >>> import pandas as pd
@@ -69,7 +66,7 @@ since each node stores its left and right children, we can access any and all no
 ![small tree](/images/simple_tree.svg)  
 
 # getting the splits
-Ok, so we can just concentrate ourselves on the `Node` class. So if you remember how the algorithm works *(if not [here is the post]({{site.baseurl}}{%link _posts/2019-02-27-the-CART-algorithm.markdown%}) where I explain it)*, we are going to need a way to find splits in our data. As we said in previous parts, there are categorical and numerical splits, so we need a way to determine if a feature is categorical or numerical, fortunately `pandas` has us covered, and we can make a simple function:
+Ok, so we can just concentrate ourselves on the `Node` class. So if you remember how the algorithm works *(if not <a></a>[here is the post](/blog/2019-02-27-the-CART-algorithm) where I explain it)*, we are going to need a way to find splits in our data. As we said in previous parts, there are categorical and numerical splits, so we need a way to determine if a feature is categorical or numerical, fortunately `pandas` has us covered, and we can make a simple function:
 ~~~python
 from pandas.api.types import is_categorical, is_string_dtype, is_bool
 
@@ -105,7 +102,7 @@ def get_numerical_splits(self, feature):
     return splits
 ~~~
 This returns all possible numerical splits in a dictionnary where the key is a `tuple` of the feature name, the value on which the split is done and the type of split, and for value the data that goes to the left side of the split *(the data that respects the split condition)*.  
-For categorical features we are not going to follow exactly what I said in [part 2](), indeed the total number of splits is: $$2^{k-1} - 1$$, with $$k$$ the possible values of our feature, this can get huge very quickly. For example, a categorical feature with 25 levels (25 brands of car, or 25 different languages, whatever...), which can be easily attained in some datasets, would result in $$33554432$$ splits to evaluate, and that's just for one feature in one node. So this can get out of hand very quickly and slow our program to a crawl. So I'm going to make an executive decision here and say we will only consider splits made by a single level, for example `brand = Ford` and eliminate all splits made by combinations of levels: `(brand = Ford) or (brand = chevrolet)`. This brings us back to a nice $$k$$ possible splits. So we can add this method to get categorical splits: 
+For categorical features we are not going to follow exactly what I said in <a></a>[part 2](/blog/2019-02-27-the-CART-algorithm), indeed the total number of splits is: $$2^{k-1} - 1$$, with $$k$$ the possible values of our feature, this can get huge very quickly. For example, a categorical feature with 25 levels (25 brands of car, or 25 different languages, whatever...), which can be easily attained in some datasets, would result in $$33554432$$ splits to evaluate, and that's just for one feature in one node. So this can get out of hand very quickly and slow our program to a crawl. So I'm going to make an executive decision here and say we will only consider splits made by a single level, for example `brand = Ford` and eliminate all splits made by combinations of levels: `(brand = Ford) or (brand = chevrolet)`. This brings us back to a nice $$k$$ possible splits. So we can add this method to get categorical splits: 
 ~~~python
 def get_categorical_splits(self, feature):
     splits = {}
@@ -255,7 +252,7 @@ def split(self):
 
 Ok so it might seem like a long function but it is actually quite simple, We just keep splitting the data with the best possible split (maximizing $$\Delta i$$), and if one of our stop conditions is met we get the prediction that this node will make: the most frequent class in the node.  
 
-All right we're done with the important bits, let's test our programm out, and see what kind of trees we get, to be able to see what tree we have I blatently ripped off [this stackOverflow answer](https://stackoverflow.com/a/54074933/8650928) which gives us super nice trees! And I added a `value` property for my nodes where I put a string describing the split if the node is a split node, and the predicted class if the node is a leaf node.  
+All right we're done with the important bits, let's test our programm out, and see what kind of trees we get, to be able to see what tree we have I blatently ripped off <a></a>[this stackOverflow answer](https://stackoverflow.com/a/54074933/8650928) which gives us super nice trees! And I added a `value` property for my nodes where I put a string describing the split if the node is a split node, and the predicted class if the node is a leaf node.  
 and if we try out our code with the iris data we get:  
 ~~~python
 >>>from sklearn.datasets import load_iris
@@ -331,5 +328,5 @@ That's it, thats the whole dataset, but you see here we have a nice mix of categ
 
 Yay everything works!  
 
-You might have noticed that we only have classification trees in this example, and you'd be right. I haven't implemented the regression part yet because I'm too lazy but it would be exactly the same, but you would need to add an RSS function that you could plug in the `get_delta_i()` method and in the `split()` method, when a leaf node is reached set the prediction value to the mean of the dataset outcomes instead of the most frequent one. So I'll put it in eventually but I won't make a separate post on that. All of the code is on my [github](https://github.com/zlanderous/CART-python) so you can play with it if you want.  
+You might have noticed that we only have classification trees in this example, and you'd be right. I haven't implemented the regression part yet because I'm too lazy but it would be exactly the same, but you would need to add an RSS function that you could plug in the `get_delta_i()` method and in the `split()` method, when a leaf node is reached set the prediction value to the mean of the dataset outcomes instead of the most frequent one. So I'll put it in eventually but I won't make a separate post on that. All of the code is on my <a></a>[github](https://github.com/zlanderous/CART-python) so you can play with it if you want.  
 One last thing, we haven't implemented the full CART algorithm because there is no pruning method to avoid overfitting, but this will come in a future part, so stay tuned!.   

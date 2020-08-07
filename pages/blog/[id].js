@@ -4,6 +4,7 @@ import Markdown from "../../components/Markdown";
 import DateBlock from "../../components/DateBlock";
 import styles from "../../styles/Post.module.css";
 import NavBar from "../../components/Navbar";
+import Footer from "../../components/Footer";
 
 export default function Post({ postData }) {
   return (
@@ -21,6 +22,7 @@ export default function Post({ postData }) {
           <Markdown>{postData.content}</Markdown>
         </main>
       </div>
+      <Footer/>
     </NavBar>
   );
 }

@@ -1,3 +1,4 @@
+
 .container {
   min-height: 100vh;
   padding: 0 0.5rem;
@@ -36,7 +37,7 @@
 }
 
 .title a {
-  color: #0070f3;
+  color: var(--link-color);
   text-decoration: none;
 }
 
@@ -96,23 +97,55 @@
 .card:hover,
 .card:focus,
 .card:active {
-  color: #0070f3;
-  border-color: #0070f3;
+  color: var(--link-color);
+  border-color: var(--link-color);
 }
 
-.card h3 {
+.socialCard {
+  margin: 1rem;
+  width: 100%;
+  padding: 1.5rem;
+  padding-top: 10rem;
+  text-align: center;
+  color: inherit;
+  text-decoration: none;
+}
+
+.card h3,
+.socialCard h3 {
   margin: 0 0 1rem 0;
   font-size: 1.5rem;
 }
 
-.card p {
+.card p,
+.socialCard p {
   margin: 0;
   font-size: 1.25rem;
   line-height: 1.5;
 }
 
-.logo {
-  height: 1em;
+.iconContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.iconContainer a {
+  padding: 1rem;
+}
+
+.iconContainer a:hover,
+.iconContainer a:focus,
+.iconContainer a:active {
+  color: var(--link-color);
+  border-color: var(--link-color);
+}
+
+.portrait {
+  border-radius: 50%;
+  width:30%;
+  margin: 3rem;
+  /* text-align: center; */
 }
 
 @media (max-width: 600px) {
@@ -120,4 +153,21 @@
     width: 100%;
     flex-direction: column;
   }
+}
+
+.resume {
+  margin-top: 3rem;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+}
+
+.subsection {
+  text-align: left;
+}
+
+.resumeCardContainer {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
 }

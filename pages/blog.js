@@ -5,10 +5,11 @@ import { getSortedPostData } from "../lib/posts";
 import Markdown from "../components/Markdown";
 import DateBlock from "../components/DateBlock";
 import NavBar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 export default function Blog({ allPostsData }) {
   return (
-    <NavBar>
+    <NavBar active="blog">
       <div className={styles.container}>
         <Head>
           <title>Luc Blassel - Blog</title>
@@ -40,7 +41,7 @@ export default function Blog({ allPostsData }) {
           </div>
         </main>
 
-        <footer className={styles.footer}>© Luc Blassel. 2020</footer>
+        <Footer/>
       </div>
     </NavBar>
   );
