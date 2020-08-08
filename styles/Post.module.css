@@ -50,6 +50,7 @@
   border-radius: 10px;
   background-color: #fdfdfd;
   overflow: scroll;
+  font-size: 80%;
 }
 
 .main code {
