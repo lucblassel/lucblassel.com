@@ -5,7 +5,7 @@ import styles from "../styles/Home.module.css";
 
 export default function About() {
   return (
-    <NavBar>
+    <NavBar active="stuff">
       <div className={styles.container}>
         <Head>
           <title>Luc Blassel - Other stuff</title>
