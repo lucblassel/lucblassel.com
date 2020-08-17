@@ -145,14 +145,6 @@
   border-radius: 50%;
   width:30%;
   margin: 3rem;
-  /* text-align: center; */
-}
-
-@media (max-width: 600px) {
-  .grid {
-    width: 100%;
-    flex-direction: column;
-  }
 }
 
 .resume {
@@ -170,4 +162,20 @@
   width: 90%;
   margin-left: auto;
   margin-right: auto;
+}
+
+@media screen and (max-width: 750px) {
+  .main {
+    width: 95%;
+  }
+  .title {
+    font-size: 300%;
+  }
+  .card {
+    width: 100%;
+  }
+  .grid {
+    width: 100%;
+    flex-direction: column;
+  }
 }

@@ -48,8 +48,8 @@
             "location": "Paris, France",
             "url": "https://www.capitaldata.fr",
             "logo": "",
-            "startYear": "2017",
-            "endYear": "",
+            "startYear": "Mar.",
+            "endYear": "Sept. 2017",
             "description": "Development of automated data validation and anomaly detection pipeline using R, golang and python."
         }
     ]

@@ -102,7 +102,7 @@ $$
 $$
 
 #### How do we use the gradient ?
-Let's assume we have our gradient for $C$ composed of all the $\frac{\delta C}{\delta \theta_j}$. Let's imagine then that$ \frac{\delta C}{\delta \theta_1} > 0$, this means that our cost is increasing with $\theta_1$, meaning that if we want to decrease $C$ we must also decrease $\theta_1$ by a certain amount. By doing this for all the $\theta_j$ we can decrease $C$ and if we repeat this step a large enough number of times we can converge to the minimal value of $C$. We know that when we reach the minimum of $C$, then the gradient value should all be equal to 0.  
+Let's assume we have our gradient for $C$ composed of all the $\frac{\delta C}{\delta \theta_j}$. Let's imagine then that $\frac{\delta C}{\delta \theta_1} > 0$, this means that our cost is increasing with $\theta_1$, meaning that if we want to decrease $C$ we must also decrease $\theta_1$ by a certain amount. By doing this for all the $\theta_j$ we can decrease $C$ and if we repeat this step a large enough number of times we can converge to the minimal value of $C$. We know that when we reach the minimum of $C$, then the gradient value should all be equal to 0.  
 
 If we try to summarize the steps that we will have to implement for linear regression we have:  
  1. compute the cost $C$ with all the $\theta_j$ values
@@ -121,7 +121,7 @@ The basic idea is that we subtract the partial derivative value from the current
 #### Can we write the math in another way?
 
 In this part I will show you how to write all the math in matrix form, because this will make the programming part a lot easier and more efficient to run *(This means that you have to know the matrix math basics to understand this)*.  
-As we said earlier we have our training examples $X$, where each example $x^{(i)}$ is a row and where each feature $x_j$ is a column. Therefore if we have $m$ examples and $n$ features, then $X$ is an $m\times n$ matrix. We also have our vector of target values $y$ which is an $m\times 1$ vector. If you recall earlier we had our predicted value for $x^{(i)} $:  
+As we said earlier we have our training examples $X$, where each example $x^{(i)}$ is a row and where each feature $x_j$ is a column. Therefore if we have $m$ examples and $n$ features, then $X$ is an $m\times n$ matrix. We also have our vector of target values $y$ which is an $m\times 1$ vector. If you recall earlier we had our predicted value for $x^{(i)}$:  
 
 $$
 \hat{y}^{(i)} = \theta_0 + \sum_{j=1}^{n}\theta_j\cdot x^{(i)}_j
@@ -231,7 +231,7 @@ X_train_norm, mu, sigma = normalize(X_train)
 X_test_norm, _, _ = normalize(X_test, mu, sigma)
 ~~~
 
-Before we can get to training our regressor we still need the bias feature $x_0$ to our $X$ matrix. To do that we just add a column full of ones to the beginning of $X $:
+Before we can get to training our regressor we still need the bias feature $x_0$ to our $X$ matrix. To do that we just add a column full of ones to the beginning of $X$:
 
 ~~~python
 # add bias feature

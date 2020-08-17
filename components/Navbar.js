@@ -25,19 +25,22 @@ export default function NavBar({ active, children }) {
   return (
     <>
       <div className={styles.navbar}>
-        <Link href="/">
-          <a className={styles.navbutton}>Home</a>
-        </Link>
-        <Link href="/about">
-          <a className={aboutStyle}>About Me</a>
-        </Link>
-        <Link href="/blog">
-          <a className={blogStyle}>Blog</a>
-        </Link>
-        <Link href="/stuff">
-          <a className={stuffStyle}>Other Stuff</a>
-        </Link>
-        <div className={styles.rightStick}>
+        <div className={styles.leftContainer}>
+          <Link href="/">
+            <a className={styles.navbutton}>Home</a>
+          </Link>
+          <Link href="/about">
+            <a className={aboutStyle}>About Me</a>
+          </Link>
+          <Link href="/blog">
+            <a className={blogStyle}>Blog</a>
+          </Link>
+          <Link href="/stuff">
+            <a className={stuffStyle}>Other Stuff</a>
+          </Link>
+        </div>
+        {/* <div className={styles.rightStick}> */}
+        <div className={styles.rightContainer}>
           <Link href="/contact">
             <a className={contactStyle}>Contact Me</a>
           </Link>
