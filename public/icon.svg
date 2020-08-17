@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="210mm" height="297mm" version="1.1" viewBox="0 0 210 297" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+ <metadata>
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title/>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <rect x="62.744" y="69.548" width="98.274" height="98.274" ry="0" fill="#a7a7a7" fill-opacity=".1371"/>
+ <text fill="#000000" font-family="sans-serif" font-size="10.583px" style="line-height:1.25;shape-inside:url(#rect837);white-space:pre" xml:space="preserve"/>
+ <g transform="matrix(1.1475 0 0 1.1475 -15.284 -9.8536)" fill="#000000" font-family="sans-serif" font-size="10.583px" stroke-width=".26458">
+  <text x="79.078629" y="130.3" style="line-height:1.25" xml:space="preserve"><tspan x="79.078629" y="130.3" font-family="Helvetica" font-size="50.8px" font-weight="bold" stroke-width=".26458">L</tspan></text>
+  <text x="104.53955" y="130.3" style="line-height:1.25" xml:space="preserve"><tspan x="104.53955" y="130.3" font-family="Helvetica" font-size="50.8px" font-weight="bold" stroke-width=".26458">B</tspan></text>
+ </g>
+</svg>

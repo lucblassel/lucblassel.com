@@ -13,7 +13,7 @@ export default function Blog({ allPostsData }) {
       <div className={styles.container}>
         <NewHead>
           <title>Luc Blassel - Blog</title>
-          <link rel="icon" href="/favicon.ico" />
+          <link rel="icon" href="/icon.svg" />
         </NewHead>
 
         <main className={styles.main}>

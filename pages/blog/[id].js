@@ -12,7 +12,7 @@ export default function Post({ postData }) {
       <div className={styles.container}>
         <NewHead>
           <title> {postData.title}</title>
-          <link rel="icon" href="/favicon.ico" />
+          <link rel="icon" href="/icon.svg" />
         </NewHead>
         <header className={styles.header}>
           <h1 className={styles.title}>{postData.title}</h1>
