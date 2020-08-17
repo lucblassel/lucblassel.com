@@ -1,4 +1,4 @@
-import Head from "next/head";
+import NewHead from "../../components/NewHead";
 import { getAllIds, getPostData } from "../../lib/posts";
 import Markdown from "../../components/Markdown";
 import DateBlock from "../../components/DateBlock";
@@ -10,10 +10,10 @@ export default function Post({ postData }) {
   return (
     <NavBar>
       <div className={styles.container}>
-        <Head>
+        <NewHead>
           <title> {postData.title}</title>
           <link rel="icon" href="/favicon.ico" />
-        </Head>
+        </NewHead>
         <header className={styles.header}>
           <h1 className={styles.title}>{postData.title}</h1>
           <DateBlock dateString={postData.date} />

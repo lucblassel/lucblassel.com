@@ -1,14 +1,22 @@
 
+.leftContainer {
+    display: flex;
+    flex-direction: row;
+}
+
 .navbar {
     padding-top: 1rem;
     height: 4rem;
-    width: 100%;
+    /* width: 100%; */
     padding-bottom: 1rem;
     font-size: 100%;
     position: fixed;
     position: sticky;
     top: 0px;
     background-color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .navbutton {
@@ -43,3 +51,28 @@
     margin-bottom: 0px;;
     height: 4rem;
 }
+
+@media screen and (max-width: 750px) {
+    .leftContainer {
+        flex-direction: column;
+        width: 200px;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+
+    .navbar {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        height: 15rem;
+        position: relative;
+    }
+
+    .rightStick {
+        position: relative;
+    }
+}
+/* 
+@media screen and (max-width: 750px) {
+    
+} */

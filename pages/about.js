@@ -1,4 +1,4 @@
-import Head from "next/head";
+import NewHead from "../components/NewHead";
 import NavBar from "../components/Navbar";
 import Footer from "../components/Footer";
 import ResumeItem from "../components/ResumeItem";
@@ -10,10 +10,10 @@ export default function About({ experience, education }) {
   return (
     <NavBar active="about">
       <div className={styles.container}>
-        <Head>
+        <NewHead>
           <title>Luc Blassel - About Me</title>
           <link rel="icon" href="/favicon.ico" />
-        </Head>
+        </NewHead>
         <main className={styles.main}>
           <h1 className={styles.title}>Luc Blassel</h1>
           <img src="/images/me.jpg" alt="my face" className={styles.portrait} />
@@ -45,6 +45,7 @@ export default function About({ experience, education }) {
                         startYear={startYear}
                         endYear={endYear}
                         url={url}
+                        id={ title + location }
                       />
                     );
                   }

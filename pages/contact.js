@@ -1,4 +1,4 @@
-import Head from "next/head";
+import NewHead from "../components/NewHead";
 import NavBar from "../components/Navbar";
 import Footer from "../components/Footer";
 import styles from "../styles/Contact.module.css";
@@ -7,11 +7,11 @@ export default function Contact() {
   return (
     <>
       <NavBar active="contact">
-        <Head>
+        <NewHead>
           <title>Luc Blassel - Contact Me</title>
           <link rel="icon" href="/favicon.ico" />
           <script src="https://kwes.io/js/kwes.js"></script>
-        </Head>
+        </NewHead>
 
         <div className={styles.formWrapper}>
           <div className="kwes-form">

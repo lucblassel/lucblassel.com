@@ -1,4 +1,4 @@
-import Head from "next/head";
+import NewHead from "../components/NewHead";
 import Link from "next/link";
 import styles from "../styles/Blog.module.css";
 import { getSortedPostData } from "../lib/posts";
@@ -11,10 +11,10 @@ export default function Blog({ allPostsData }) {
   return (
     <NavBar active="blog">
       <div className={styles.container}>
-        <Head>
+        <NewHead>
           <title>Luc Blassel - Blog</title>
           <link rel="icon" href="/favicon.ico" />
-        </Head>
+        </NewHead>
 
         <main className={styles.main}>
           <h1 className={styles.title}>Blog posts</h1>

@@ -1,4 +1,4 @@
-import Head from "next/head";
+import NewHead from "../components/NewHead";
 import Link from "next/link";
 import styles from "../styles/Home.module.css";
 import { getSortedPostData } from "../lib/posts";
@@ -18,10 +18,10 @@ import ContactButton from "../components/ContactButton"
 export default function Home({ allPostsData }) {
   return (
     <div className={styles.container}>
-      <Head>
+      <NewHead>
         <title>Luc Blassel - Home</title>
         <link rel="icon" href="/favicon.ico" />
-      </Head>
+      </NewHead>
       <ContactButton/>
       <main className={styles.main}>
         <h1 className={styles.title}>LucBlassel.com</h1>
