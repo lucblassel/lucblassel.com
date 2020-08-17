@@ -9,7 +9,7 @@ export default function About() {
       <div className={styles.container}>
         <NewHead>
           <title>Luc Blassel - Other stuff</title>
-          <link rel="icon" href="/icon.svg" />
+          {/* <link rel="icon" href="/icon.svg" /> */}
         </NewHead>
         <main className={styles.main}>
           <h1 className={styles.title}>Other stuff</h1>

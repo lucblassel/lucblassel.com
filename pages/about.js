@@ -12,7 +12,7 @@ export default function About({ experience, education }) {
       <div className={styles.container}>
         <NewHead>
           <title>Luc Blassel - About Me</title>
-          <link rel="icon" href="/icon.svg" />
+          {/* <link rel="icon" href="/icon.svg" /> */}
         </NewHead>
         <main className={styles.main}>
           <h1 className={styles.title}>Luc Blassel</h1>

@@ -20,7 +20,7 @@ export default function Home({ allPostsData }) {
     <div className={styles.container}>
       <NewHead>
         <title>Luc Blassel - Home</title>
-        <link rel="icon" href="/icon.svg" />
+        {/* <link rel="icon" href="/icon.svg" /> */}
       </NewHead>
       <ContactButton/>
       <main className={styles.main}>

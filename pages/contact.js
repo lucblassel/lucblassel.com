@@ -9,7 +9,7 @@ export default function Contact() {
       <NavBar active="contact">
         <NewHead>
           <title>Luc Blassel - Contact Me</title>
-          <link rel="icon" href="/icon.svg" />
+          {/* <link rel="icon" href="/icon.svg" /> */}
           <script src="https://kwes.io/js/kwes.js"></script>
         </NewHead>
 
