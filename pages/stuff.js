@@ -18,8 +18,8 @@ export default function About({ allSummaries }) {
           <h1 className={styles.title}>Other stuff</h1>
 
           <p className={styles.description}>
-            Links to stuff I find cool, <br />
-            or projects I did not necessarily write up.
+            Random mish-mash of stuff I find cool, <br/>
+            or don't quite know where to put...
           </p>
 
           <div className={styles.grid}>
