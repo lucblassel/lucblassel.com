@@ -1,9 +1,12 @@
 import NewHead from "../components/NewHead";
 import NavBar from "../components/Navbar";
 import Footer from "../components/Footer";
-import styles from "../styles/Home.module.css";
+import DateBlock from "../components/DateBlock";
+import Markdown from "../components/Markdown";
+import styles from "../styles/Blog.module.css";
+import { getSortedData } from "../lib/stuff";
 
-export default function About() {
+export default function About({ allSummaries }) {
   return (
     <NavBar active="stuff">
       <div className={styles.container}>
@@ -15,16 +18,34 @@ export default function About() {
           <h1 className={styles.title}>Other stuff</h1>
 
           <p className={styles.description}>
-            do I find it cool ? if so it'll go here :) 
+            Links to stuff I find cool, <br />
+            or projects I did not necessarily write up.
           </p>
 
-        <div className={styles.grid}>
-            <p> This will come later...</p>
-        </div>
-
-      </main>
-      <Footer/>
+          <div className={styles.grid}>
+            {allSummaries.map(({ id, date, title, url, content }) => {
+              return (
+                <a className={styles.card} href={url} key={id}>
+                  <h3> {title} </h3>
+                  <p>
+                    <DateBlock dateString={date} />
+                    <br />
+                    <Markdown>{content}</Markdown>
+                  </p>
+                </a>
+              );
+            })}
+          </div>
+        </main>
+        <Footer />
       </div>
     </NavBar>
   );
+}
+
+export async function getStaticProps() {
+  const allSummaries = getSortedData();
+  return {
+    props: { allSummaries },
+  };
 }
