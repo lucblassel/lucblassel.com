@@ -120,7 +120,7 @@ do if we wanted to insert the point we want to classify. So if we take our examp
 we want to find the nearest neighbor of the point $(4,8)$. To calculate distances we will use the Euclidean
 distance.
 
-1. We compare it to the first point in our tree. $d((4,8),(5,4)) = \sqrt{(4−5)^2 + (8−4)^2} = 4.12$ which
+1. We compare it to the first point in our tree. $d((4,8),(5,4)) = \sqrt{(4\text{ - }5)^2 + (8\text{ - }4)^2} = 4.12$ which
 becomes our minimum distance. since the first level cuts on the first dimension we compare : $4 < 5$
 so we search in the left subtree first.
 2. We now calculate $d((4,8),(3,6)) = 2. 24$ which is now our closest distance.we now compare the
@@ -148,10 +148,10 @@ The rule to prune our tree is to compare the closest distance we know to the clo
 
 To better understand how the pruning process works let’s apply it step by step in our example :
 
-1. our first distance $d((4,8),(5,4)) = 4.12$ is greater than $\vert 5 − 4 \vert = 1$ so we cannot prune the right subtree of $(5,4)$ and that is good because our real closest neighbor is in this right subtree.
-2. as in our first search detailed above we then calculate $d((4,8),(3,6)) = 2.24$ , we calculate the closest distance to the bounding box: $\vert 8 − 6 \vert= 2 < 2.24$ so we cannot prune the left subtree.
-3. the search goes along exactly like the first one until we reach $(1,3)$ our closest distance for the moment is still $2.24$ however $\vert 8 − 3 \vert = 5 > 2$ so we can eliminate the search of any of $(1,3)$’s subtrees.
-4. after $(1,3)$ we have explored the entirety of the root’s left subtree and we arrive in $(7,7)$ the distance is greater than 2. 24 so it not our new closest neighbor. We will explore the right subtree first because $8 \geq 7$. we cannot prune the left subtree because $\vert 8 − 7 \vert = 1 < 2.24$
+1. our first distance $d((4,8),(5,4)) = 4.12$ is greater than $\vert 5 \text{ - } 4 \vert = 1$ so we cannot prune the right subtree of $(5,4)$ and that is good because our real closest neighbor is in this right subtree.
+2. as in our first search detailed above we then calculate $d((4,8),(3,6)) = 2.24$ , we calculate the closest distance to the bounding box: $\vert 8 \text{ - } 6 \vert= 2 < 2.24$ so we cannot prune the left subtree.
+3. the search goes along exactly like the first one until we reach $(1,3)$ our closest distance for the moment is still $2.24$ however $\vert 8 \text{ - } 3 \vert = 5 > 2$ so we can eliminate the search of any of $(1,3)$’s subtrees.
+4. after $(1,3)$ we have explored the entirety of the root’s left subtree and we arrive in $(7,7)$ the distance is greater than 2. 24 so it not our new closest neighbor. We will explore the right subtree first because $8 \geq 7$. we cannot prune the left subtree because $\vert 8 \text{ - } 7 \vert = 1 < 2.24$
 1. we explore $(9,9)$ explore it’s subtrees and find our new nearest neighbor $(6,8)$ so now the closest distance is $2$.
 2. we explore the left subtree of $(7,7)$, and arrive at $(8,2)$ we will be able to prune the right subtree of $(8,2)$ and will have to explore the left.
 
