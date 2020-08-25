@@ -1,56 +1,56 @@
 {
-    "education": [
-        {
-            "institution": "Paris Dauphine University",
-            "title": "MSc in Machine Learning",
-            "location": "Paris, France",
-            "url": "https://dauphine.psl.eu/en/",
-            "logo": "",
-            "startYear": "2017",
-            "endYear": "2018",
-            "description": "Reinforcement learning, data mining, deep learning. Double diploma with AgroParisTech  \n([ISI research master](https://dauphine.psl.eu/formations/masters/informatique/m2-intelligence-artificielle-systemes-donnees))"
-        },
-        {
-            "institution": "AgroParisTech, Paris Institute for life, food and environmental sciences",
-            "title": "\"Ingénieur Agronome\" diploma",
-            "location": "Paris, France",
-            "url": "http://www2.agroparistech.fr",
-            "logo": "",
-            "startYear": "2014",
-            "endYear": "2018",
-            "description": "Biology and life sciences common core with elective classes in computer science. Last year specialization: machine learning and data mining.  \n([IODAA program](http://www.agroparistech.fr/ufr-info/iodaa/))"
-        }
-    ],
-    "experience": [
-        {
-            "institution": "Institut Pasteur",
-            "title": "PhD. Student",
-            "location": "Paris, France",
-            "url": "https://research.pasteur.fr/en/",
-            "logo": "",
-            "startYear": "2020",
-            "endYear": "now",
-            "description": "Using machine learning for biological sequence analysis.  \n[More details](https://research.pasteur.fr/en/project/applying-machine-learning-to-sequence-analysis-phd-luc-blassel-prairie/)"
-        },
-        {
-            "institution": "Institut Pasteur",
-            "title": "Graduate researcher, then research engineer",
-            "location": "Paris, France",
-            "url": "https://research.pasteur.fr/en/",
-            "logo": "",
-            "startYear": "2018",
-            "endYear": "2020",
-            "description": "Using machine learning and big data to explore the drug resistance landscape in HIV *pol*-RT.  \n[More details](https://research.pasteur.fr/en/project/drm-hiv/)"
-        },
-        {
-            "institution": "CapitalData",
-            "title": "Data Scientist intern",
-            "location": "Paris, France",
-            "url": "https://www.capitaldata.fr",
-            "logo": "",
-            "startYear": "Mar.",
-            "endYear": "Sept. 2017",
-            "description": "Development of automated data validation and anomaly detection pipeline using R, golang and python."
-        }
-    ]
+  "education": [
+    {
+      "institution": "Paris Dauphine University",
+      "title": "MSc in Machine Learning",
+      "location": "Paris, France",
+      "url": "https://dauphine.psl.eu/en/",
+      "logo": "",
+      "startYear": "2017",
+      "endYear": "2018",
+      "description": "Reinforcement learning, data mining, deep learning. Double diploma with AgroParisTech  \n([ISI research master](https://dauphine.psl.eu/formations/masters/informatique/m2-intelligence-artificielle-systemes-donnees))"
+    },
+    {
+      "institution": "AgroParisTech, Paris Institute for life, food and environmental sciences",
+      "title": "\"Ingénieur Agronome\" diploma",
+      "location": "Paris, France",
+      "url": "http://www2.agroparistech.fr",
+      "logo": "",
+      "startYear": "2014",
+      "endYear": "2018",
+      "description": "Biology and life sciences common core with elective classes in computer science. Last year specialization: machine learning and data mining.  \n([IODAA program](http://www.agroparistech.fr/ufr-info/iodaa/))"
+    }
+  ],
+  "experience": [
+    {
+      "institution": "Institut Pasteur",
+      "title": "PhD. Student",
+      "location": "Paris, France",
+      "url": "https://research.pasteur.fr/en/",
+      "logo": "",
+      "startYear": "2020",
+      "endYear": "now",
+      "description": "Using machine learning for biological sequence analysis.  \n[More details](https://research.pasteur.fr/en/project/applying-machine-learning-to-sequence-analysis-phd-luc-blassel-prairie/)"
+    },
+    {
+      "institution": "Institut Pasteur",
+      "title": "Graduate researcher, then research engineer",
+      "location": "Paris, France",
+      "url": "https://research.pasteur.fr/en/",
+      "logo": "",
+      "startYear": "2018",
+      "endYear": "2020",
+      "description": "Using machine learning and big data to explore the drug resistance landscape in HIV *pol*-RT.  \n[More details](https://research.pasteur.fr/en/project/drm-hiv/)"
+    },
+    {
+      "institution": "CapitalData",
+      "title": "Data Scientist intern",
+      "location": "Paris, France",
+      "url": "https://www.capitaldata.fr",
+      "logo": "",
+      "startYear": "Mar.",
+      "endYear": "Sept. 2017",
+      "description": "Development of automated data validation and anomaly detection pipeline using R, golang and python."
+    }
+  ]
 }

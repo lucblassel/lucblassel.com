@@ -13,7 +13,7 @@ import {
   faOrcid,
 } from "@fortawesome/free-brands-svg-icons";
 import Footer from "../components/Footer";
-import ContactButton from "../components/ContactButton"
+import ContactButton from "../components/ContactButton";
 
 export default function Home({ allPostsData }) {
   return (
@@ -22,7 +22,7 @@ export default function Home({ allPostsData }) {
         <title>Luc Blassel - Home</title>
         {/* <link rel="icon" href="/icon.svg" /> */}
       </NewHead>
-      <ContactButton/>
+      <ContactButton />
       <main className={styles.main}>
         <h1 className={styles.title}>LucBlassel.com</h1>
         <img src="/images/me.jpg" alt="my face" className={styles.portrait} />

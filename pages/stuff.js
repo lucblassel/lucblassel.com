@@ -18,7 +18,7 @@ export default function About({ allSummaries }) {
           <h1 className={styles.title}>Other stuff</h1>
 
           <p className={styles.description}>
-            Random mish-mash of stuff I find cool, <br/>
+            Random mish-mash of stuff I find cool, <br />
             or don't quite know where to put...
           </p>
 

@@ -22,7 +22,7 @@ export default function ResumeItem({
             <span>{startYear}</span> - <span>{endYear}</span>
           </div>
         </div>
-        <hr className={styles.divider}/>
+        <hr className={styles.divider} />
       </div>
       <div></div>
 

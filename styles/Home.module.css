@@ -1,4 +1,3 @@
-
 .container {
   min-height: 100vh;
   padding: 0 0.5rem;
@@ -113,7 +112,7 @@
 
 .card h3,
 .socialCard h3 {
-  margin: 0 0 1rem 0;
+  margin: 0 0 1rem;
   font-size: 1.5rem;
 }
 
@@ -143,7 +142,7 @@
 
 .portrait {
   border-radius: 50%;
-  width:30%;
+  width: 30%;
   margin: 3rem;
 }
 

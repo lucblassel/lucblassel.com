@@ -1,78 +1,72 @@
-
 .leftContainer {
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }
 
 .navbar {
-    padding-top: 1rem;
-    height: 4rem;
-    /* width: 100%; */
-    padding-bottom: 1rem;
-    font-size: 100%;
-    position: fixed;
-    position: sticky;
-    top: 0px;
-    background-color: white;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+  padding-top: 1rem;
+  height: 4rem;
+  padding-bottom: 1rem;
+  font-size: 100%;
+  position: fixed;
+  position: sticky;
+  top: 0;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .navbutton {
-    font-size: 2em;
-    margin-right: 1rem;
-    margin-left: 1rem;
+  font-size: 2em;
+  margin-right: 1rem;
+  margin-left: 1rem;
 }
 
 .navbutton:hover,
 .navbutton:focus,
 .navbutton:active {
-    color: var(--link-color);
+  color: var(--link-color);
 }
 
 .active {
-    color: var(--link-color);
-    font-size: 2em;
-    margin-right: 1rem;
-    margin-left: 1rem;
+  color: var(--link-color);
+  font-size: 2em;
+  margin-right: 1rem;
+  margin-left: 1rem;
 }
 
 .content {
-    padding-top: 4rem; 
+  padding-top: 4rem;
 }
 
 .rightStick {
-    position: fixed;
-    top: 0px;
-    right: 0px;
-    padding-top: 1rem;
-    padding-bottom: 0px;
-    margin-bottom: 0px;;
-    height: 4rem;
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding-top: 1rem;
+  padding-bottom: 0;
+  margin-bottom: 0;
+  height: 4rem;
 }
 
 @media screen and (max-width: 750px) {
-    .leftContainer {
-        flex-direction: column;
-        width: 200px;
-        justify-content: flex-start;
-        align-items: flex-start;
-    }
+  .leftContainer {
+    flex-direction: column;
+    width: 200px;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
 
-    .navbar {
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: flex-start;
-        height: 15rem;
-        position: relative;
-    }
+  .navbar {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: 15rem;
+    position: relative;
+  }
 
-    .rightStick {
-        position: relative;
-    }
+  .rightStick {
+    position: relative;
+  }
 }
-/* 
-@media screen and (max-width: 750px) {
-    
-} */

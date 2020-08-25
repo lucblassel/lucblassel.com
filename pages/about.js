@@ -45,7 +45,7 @@ export default function About({ experience, education }) {
                         startYear={startYear}
                         endYear={endYear}
                         url={url}
-                        key={ title + location }
+                        key={title + location}
                       />
                     );
                   }
@@ -75,7 +75,7 @@ export default function About({ experience, education }) {
                         startYear={startYear}
                         endYear={endYear}
                         url={url}
-                        key={ title + location }
+                        key={title + location}
                       />
                     );
                   }

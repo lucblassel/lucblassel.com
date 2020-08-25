@@ -41,7 +41,7 @@ export default function Blog({ allPostsData }) {
           </div>
         </main>
 
-        <Footer/>
+        <Footer />
       </div>
     </NavBar>
   );
