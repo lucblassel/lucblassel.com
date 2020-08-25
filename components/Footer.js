@@ -4,11 +4,7 @@ import { faCopyright } from "@fortawesome/free-solid-svg-icons";
 
 export default function Footer() {
   let copyright = (
-    <FontAwesomeIcon
-      icon={faCopyright}
-      height="1rem"
-      color="grey"
-    />
+    <FontAwesomeIcon icon={faCopyright} height="1rem" color="grey" />
   );
   return (
     <footer className={styles.footer}>

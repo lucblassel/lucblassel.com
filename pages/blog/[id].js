@@ -22,7 +22,7 @@ export default function Post({ postData }) {
           <Markdown>{postData.content}</Markdown>
         </main>
       </div>
-      <Footer/>
+      <Footer />
     </NavBar>
   );
 }
