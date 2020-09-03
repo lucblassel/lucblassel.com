@@ -45,7 +45,7 @@ Or we can get the samples which have $$sepal\ width \leq 3.1$$:
 3                4.6               3.1                1.5               0.2  setosa
 ```
 
-So it is easy to see how this makes understanding what the code is doing easier and that's why I'm using `DataFrame`s instead of arrays and indices. This is however far from all `pandas` can do _(duh...)_, and it's just the basics of the basics of the basics.
+So it is easy to see how this makes understanding what the code is doing easier and that's why I'm using `DataFrame`s instead of arrays and indices. This is however far from all `pandas` can do _(duh...)_, and it's just the basics of the basics.
 
 # Representing a tree.
 
@@ -74,7 +74,7 @@ since each node stores its left and right children, we can access any and all no
 
 # getting the splits
 
-Ok, so we can just concentrate ourselves on the `Node` class. So if you remember how the algorithm works _(if not <a></a>[here is the post](/blog/2019-02-27-the-CART-algorithm) where I explain it)_, we are going to need a way to find splits in our data. As we said in previous parts, there are categorical and numerical splits, so we need a way to determine if a feature is categorical or numerical, fortunately `pandas` has us covered, and we can make a simple function:
+Ok, so we can just concentrate ourselves on the `Node` class. So if you remember how the algorithm works _(if not <a></a>[here is the post](/blog/the-CART-algorithm) where I explain it)_, we are going to need a way to find splits in our data. As we said in previous parts, there are categorical and numerical splits, so we need a way to determine if a feature is categorical or numerical, fortunately `pandas` has us covered, and we can make a simple function:
 
 ```python
 from pandas.api.types import is_categorical, is_string_dtype, is_bool
@@ -83,7 +83,7 @@ def check_categorical(data):
     return is_categorical(data) | is_string_dtype(data) | is_bool(data)
 ```
 
-So now that we can distinguish the two we can write this function that gets all possible splits in our dataset, and returns them as a dictionnary
+So now that we can distinguish the two we can write this function that gets all possible splits in our dataset, and returns them as a dictionary
 
 ```python
 def get_splits(self):
@@ -112,8 +112,8 @@ def get_numerical_splits(self, feature):
     return splits
 ```
 
-This returns all possible numerical splits in a dictionnary where the key is a `tuple` of the feature name, the value on which the split is done and the type of split, and for value the data that goes to the left side of the split _(the data that respects the split condition)_.  
-For categorical features we are not going to follow exactly what I said in <a></a>[part 2](/blog/2019-02-27-the-CART-algorithm), indeed the total number of splits is: $$2^{k-1} - 1$$, with $$k$$ the possible values of our feature, this can get huge very quickly. For example, a categorical feature with 25 levels (25 brands of car, or 25 different languages, whatever...), which can be easily attained in some datasets, would result in $$33554432$$ splits to evaluate, and that's just for one feature in one node. So this can get out of hand very quickly and slow our program to a crawl. So I'm going to make an executive decision here and say we will only consider splits made by a single level, for example `brand = Ford` and eliminate all splits made by combinations of levels: `(brand = Ford) or (brand = chevrolet)`. This brings us back to a nice $$k$$ possible splits. So we can add this method to get categorical splits:
+This returns all possible numerical splits in a dictionary where the key is a `tuple` of the feature name, the value on which the split is done and the type of split, and as a value the data that goes to the left side of the split _(the data that respects the split condition)_.  
+For categorical features we are not going to follow exactly what I said in <a></a>[part 2](/blog/the-CART-algorithm), indeed the total number of splits is: $$2^{k-1} - 1$$, with $$k$$ the possible values of our feature, this can get huge very quickly. For example, a categorical feature with 25 levels (25 brands of car, or 25 different languages, whatever...), which can be easily attained in some datasets, would result in $$33554432$$ splits to evaluate, and that's just for one feature in one node. So this can get out of hand very quickly and slow our program to a crawl. So I'm going to make an executive decision here and say we will only consider splits made by a single level, for example `brand = Ford` and eliminate all splits made by combinations of levels: `(brand = Ford) or (brand = Chevrolet)`. This brings us back to a nice $$k$$ possible splits. So we can add this method to get categorical splits:
 
 ```python
 def get_categorical_splits(self, feature):
@@ -159,7 +159,7 @@ def get_delta_i(self, subset):
     return gini - sub_left - sub_right
 ```
 
-Here `subset` is the data in the entries of the dictionnary given by `get_splits()`, so it's just the left side of the splits. To get the right side we take the whole data of the node and get rid of all the rows that are in the left split (`subset`).  
+Here `subset` is the data in the entries of the dictionary given by `get_splits()`, so it's just the left side of the splits. To get the right side we take the whole data of the node and get rid of all the rows that are in the left split (`subset`).  
 So now we can get the best split by looping over all possible splits, ad returning the one with the highest value of $$\Delta i$$:
 
 ```python
@@ -175,7 +175,7 @@ def get_best_split(self):
 
 # Building the tree
 
-Ok so now for the fun part, we are going to build the tree recursively. To do that we choose the best split at our root node, and then apply the split function on each of these subtrees, and in turn each of the splits in these split will also be splited... And this needs to keep happening until some conditions are met: the stop condition.  
+Ok so now for the fun part, we are going to build the tree recursively. To do that we choose the best split at our root node, and then apply the split function on each of these subtrees, and in turn each of the splits in these split will also be split... And this needs to keep happening until some conditions are met: the stop condition.  
 So when do we want to stop splitting the data at a given node? Well the simplest answer would be to stop when the node is pure (or when there are no more possible splits), so it contains data points of only one class. However since, as we said in previous parts, we want to avoid overfitting we will also add some other stop conditions:
 
 - Stop splitting when the leaf has under a certain amount of data points
@@ -270,7 +270,7 @@ def split(self):
 
 Ok so it might seem like a long function but it is actually quite simple, We just keep splitting the data with the best possible split (maximizing $$\Delta i$$), and if one of our stop conditions is met we get the prediction that this node will make: the most frequent class in the node.
 
-All right we're done with the important bits, let's test our programm out, and see what kind of trees we get, to be able to see what tree we have I blatently ripped off <a></a>[this stackOverflow answer](https://stackoverflow.com/a/54074933/8650928) which gives us super nice trees! And I added a `value` property for my nodes where I put a string describing the split if the node is a split node, and the predicted class if the node is a leaf node.  
+All right we're done with the important bits, let's test our program out, and see what kind of trees we get, to be able to see what tree we have I blatantly ripped off <a></a>[this StackOverflow answer](https://stackoverflow.com/a/54074933/8650928) which gives us super nice trees! And I added a `value` property for my nodes where I put a string describing the split if the node is a split node, and the predicted class if the node is a leaf node.  
 and if we try out our code with the iris data we get:
 
 ```python
@@ -308,7 +308,7 @@ Hey that tree looks super familiar, yay it's the exact same one than the in prev
                                   (versicolor)                         (virginica)                        (virginica)                         (virginica)
 ```
 
-We get a tree that's one level deeper. So everything seems to be working fine. However in our iris dataset we only have numerical data, legnths and widths, so we don't really know if our tree building nethod works with categorical data. So to do this I'm going ot use the golfing dataset which has a certain number of features, and the target value is if a game of golf is played or not. This dataset is very small so I can show you all of it here:
+We get a tree that's one level deeper. So everything seems to be working fine. However in our iris dataset we only have numerical data, lengths and widths, so we don't really know if our tree building method works with categorical data. So to do this I'm going to use the golfing dataset which has a certain number of features, and the target value is if a game of golf is played or not. This dataset is very small so I can show you all of it here:
 
 | id  | outlook  | temperature | humidity | windy | play |
 | --- | -------- | ----------- | -------- | ----- | ---- |
@@ -327,7 +327,7 @@ We get a tree that's one level deeper. So everything seems to be working fine. H
 | 13  | overcast | 81          | 75       | FALSE | yes  |
 | 14  | rainy    | 71          | 91       | TRUE  | no   |
 
-That's it, thats the whole dataset, but you see here we have a nice mix of categorical and numerical data. Ok so let's see how our CART implementation handles this:
+That's it, that's the whole dataset, but you see here we have a nice mix of categorical and numerical data. Ok so let's see how our CART implementation handles this:
 
 ```python
 >>>import pandas as pd

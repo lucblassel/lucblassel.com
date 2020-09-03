@@ -57,7 +57,7 @@ Ok so first let's agree on some notation, we have:
 - $\hat{y}$ is the column _(ie. vector)_ of target values predicted by the linear regression model, and $\hat{y}^{(i)}$ its $i^{th}$ value.
 - $m$ the number of training examples and $n$ the number of features.
 
-The way linear regression works is by finding the coefficients that result in the minimal distance between each target value and it's corresponding prediction, this distance is represented in the following figure as green lines. As we can see the distance between the prediction _(dotted line)_ and real values _(blue points)_ is much lower when $\theta = 2$ _(which is the coefficient that generated the data)_ on the left than when $\theta = 6$ on the right.
+The way linear regression works is by finding the coefficients that result in the minimal distance between each target value and its corresponding prediction, this distance is represented in the following figure as green lines. As we can see the distance between the prediction _(dotted line)_ and real values _(blue points)_ is much lower when $\theta = 2$ _(which is the coefficient that generated the data)_ on the left than when $\theta = 6$ on the right.
 
 ![distance to fitted line](/images/linear_regression/square_distance.svg)
 
@@ -185,13 +185,13 @@ $$
 $$
 
 This matrix form will allow us to write the code more clearly once we get to that, and the computations will be much more efficient with matrix math than writing loops for the sums.  
-Ok so I guess we can start getting into the implementation part of this post. I'll do this in Python but any other programming language with decent matrix math library will do the trick.
+Ok so I guess we can start getting into the implementation part of this post. I'll do this in Python but any other programming language with a decent matrix math library will do the trick.
 
 # How can we implement linear regression ?
 
 ### Getting a dataset
 
-Ok so first things first we need some data on which to train our linear regressor, I'm going to stick to basics an use the <a></a>[boston housing dataset](https://www.cs.toronto.edu/~delve/data/boston/bostonDetail.html), where we try to guess the median monetary value of different homes depending on several features like number of rooms, crime rate, distance to nearest job center, etc...  
+Ok so first things first we need some data on which to train our linear regressor, I'm going to stick to basics an use the <a></a>[boston housing dataset](https://www.cs.toronto.edu/~delve/data/boston/bostonDetail.html), where we try to guess the median monetary value of different homes depending on several features like the number of rooms, crime rate, distance to the nearest job center, etc...  
 This dataset is available in the `scikit-learn` library in Python and we are going to split it into a training dataset with $80\%$ of the examples and keep the remaining $20\%$ as a testing set on which we can evaluate the performance of our linear regressor. I wrote a small dataset splitting function, and loaded the data.
 
 ```python
@@ -254,7 +254,7 @@ X_test_norm = np.append(
 
 ### Building our regressor
 
-Now we can get to the actual regression part. First we need to be able to compute our cost, note that in Python the matrix multiplication symbol is `@`, and th `**2` means we square the matrix element-wise.
+Now we can get to the actual regression part. First we need to be able to compute our cost, note that in Python the matrix multiplication symbol is `@`, and the `**2` means we square the matrix element-wise.
 
 ```python
 def compute_cost(theta, X, y):
@@ -315,7 +315,7 @@ y_pred = predict(X_test_norm, theta_learned)
 
 ![regression plot](/images/linear_regression/regression_plot.svg)
 
-The red dotted line shows the $y = x$ line, so if our regressor was perfect all the points would be exactly on that line, however nothing is perfect. All the points are close to that diagonal line, meaning our linear regressor is actually doing quite well, except for high tru values where the predictions are consistently lower than the truth.
+The red dotted line shows the $y = x$ line, so if our regressor was perfect all the points would be exactly on that line, however nothing is perfect. All the points are close to that diagonal line, meaning our linear regressor is actually doing quite well, except for high true values where the predictions are consistently lower than the truth.
 One last thing we can do is compare our method to the state of the art implementation from the `scikit-learn` library.
 
 ```python
@@ -333,6 +333,6 @@ $$
 RMSE = \sqrt{\frac{\sum_{i=1}^m(\hat{y}^{(i)} - y^{(i)})^2}{m}}
 $$
 
-In this case uor regressor and the `scikit-learn` regressor both have an RMSE of $4.9277$, with only a difference of $0.00008\%$, so our model and the state of the art have an identical performance, which is quite reassuring.
+In this case our regressor and the `scikit-learn` regressor both have an RMSE of $4.9277$, with only a difference of $0.00008\%$, so our model and the state of the art have an identical performance, which is quite reassuring.
 
-In a next post I'll talk about regularization and how we can add it to our linear regressor. In the meantime I hope you've liked this little write-up and if you want to take a closer look at the code it's all available in this repo: <a></a>[github.com/lucblassel/website_projects](https://github.com/lucblassel/website_projects/)
+In the next post I'll talk about regularization and how we can add it to our linear regressor. In the meantime I hope you've liked this little write-up and if you want to take a closer look at the code it's all available in this repo: <a></a>[github.com/lucblassel/website_projects](https://github.com/lucblassel/website_projects/)
