@@ -2,7 +2,6 @@
 title: emoj.yt (emoji URL-shortener)
 date: 2020-08-19
 excerpt_separator: <!--more-->
-draft: true
 ---
 
 This is a little write up of a very small project I did, inspired by [Coding Garden with CJ](https://coding.garden) on youtube & twitch _(specifically [this video](https://www.youtube.com/watch?v=gq5yubc1u18))_, and [Net Ninja](https://www.thenetninja.co.uk) express tutorials:  
