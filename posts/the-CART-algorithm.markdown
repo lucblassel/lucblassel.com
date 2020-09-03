@@ -28,13 +28,13 @@ Anything in between brackets $\{\}$ is a set of objects (generally numbers).
 
 ### Sums
 
-Sums are represented by the $\Sigma$ symbol _(read as "sigma")_. The value under the sigma is the start point, and tje value above is the end point of the sum. So :
+Sums are represented by the $\Sigma$ symbol _(read as "sigma")_. The value under the sigma is the start point, and the value above is the end point of the sum. So :
 
 $$
 \sum^3_{i=1} i^2 = 1^2 + 2^2 + 3^2 = 14
 $$
 
-If you have any more questions about mathematical notation I would suggest you consult <a></a>[this wikipedia page][1] which is quite comprehensive.
+If you have any more questions about mathematical notation I would suggest you consult <a></a>[this Wikipedia page][1] which is quite comprehensive.
 
 ### in this article
 
@@ -73,7 +73,7 @@ _(NB. there can be ordered categorical values, like grades for example $A > B > 
 
 #### A. numerical splits
 
-For a given node there are $n$ data points. Let us consider the numerical expalatory feature $X_{num}$. In this case we have a maximum number of splits $n-1$ corresponding to all the splits:
+For a given node there are $n$ data points. Let us consider the numerical explanatory feature $X_{num}$. In this case we have a maximum number of splits $n-1$ corresponding to all the splits:
 
 $$
 S = \{ X_{num} \leq x_i\},\{X_{num} > x_i\}\quad\quad i \in \{1,\cdots,n-1\}
@@ -97,8 +97,8 @@ $$
 C \in \{red,\ blue,\ green\}
 $$
 
-To create a subset we must choose which values are in or not the subset. For example the subset $\mathcal{A} = \{red,\ green\}$ what we are saying is $red\in \mathcal{A}$ and $green\in \mathcal{A}$ and $blue\notin \mathcal{A}$. So each subset is a set of 3 values indicating presence or absence of a given level of $C$ in the subset. With this we can easily calculate the number of possible subsets.  
-For the first value (presence or absence of $red$ in the subset) there are $2$ possible options, for the second value we also have $2$ potentail values and the same for the third values.  
+To create a subset we must choose which values are in or not the subset. For example the subset $\mathcal{A} = \{red,\ green\}$ what we are saying is $red\in \mathcal{A}$ and $green\in \mathcal{A}$ and $blue\notin \mathcal{A}$. So each subset is a set of 3 values indicating the presence or absence of a given level of $C$ in the subset. With this we can easily calculate the number of possible subsets.  
+For the first value (presence or absence of $red$ in the subset) there are $2$ possible options, for the second value we also have $2$ potential values and the same for the third values.  
 So our total number of possible subsets is:
 
 $$
@@ -123,18 +123,18 @@ $$
 \end{aligned}
 $$
 
-It is easy to see that $S_1 = S_2$, that symmetry is why on out number of possible splits we have $2^{k-1}$ instead of simply $2^k$. The explanation for why it is $2^{k-1}-1$ and not $2^{k-1}$ is the same as for numerical features, because if $\mathcal{A}=\{red,\ blue,\ green\}$ then Our splits has all the points one one side and and empty set on the other, so it is not a split, so we remove that possibility and that's how we end up with $2^{k-1}-1$ _(thats also why we used $\mathcal{A} \subset \{1,\cdots,k\}$ instead of $\mathcal{A} \subseteq \{1,\cdots,k\}$ when we_ <a></a>[defined our categorical splits](http://google.com) _)._
+It is easy to see that $S_1 = S_2$, that symmetry is why on out number of possible splits we have $2^{k-1}$ instead of simply $2^k$. The explanation for why it is $2^{k-1}-1$ and not $2^{k-1}$ is the same as for numerical features, because if $\mathcal{A}=\{red,\ blue,\ green\}$ then Our splits has all the points one one side and and empty set on the other, so it is not a split, so we remove that possibility and that's how we end up with $2^{k-1}-1$ _(thats also why we used $\mathcal{A} \subset \{1,\cdots,k\}$ instead of $\mathcal{A} \subseteq \{1,\cdots,k\}$ when we_ <a></a>[defined our categorical splits](#categorical-splits-definition) _)._
 
 So now we have all of the possible splits in our data, but how do we choose the best one?
 
 ## Choosing the best split
 
-Since we want to use the tree to predict either a class or a value, we want the leafs of the tree to be as "pure" as possible, meaning we want the examples in each leaf to be similar. To get that we need a way to measure the "purity" of a node, so how similar all data points are in that node.  
+Since we want to use the tree to predict either a class or a value, we want the leaves of the tree to be as "pure" as possible, meaning we want the examples in each leaf to be similar. To get that we need a way to measure the "purity" of a node, so how similar all data points are in that node.  
 Therefore, to chose the best split, we choose the one that maximizes this "purity" measure in the child nodes. In practice we don't measure "purity" but rather "impurity". There are several of these measures. In this whole section let's consider a node $t$, and for an impurity measure $i$ we can define $i(t)$ as the impurity of this node.
 
 ### The Gini index
 
-The Gini index is a way to measure impurity in classification trees. Let $p_i$ be the probability of having class $i$ in our node, and $k$ the number of classes in the node. The gini index $G$ is:
+The Gini index is a way to measure impurity in classification trees. Let $p_i$ be the probability of having class $i$ in our node, and $k$ the number of classes in the node. The Gini index $G$ is:
 
 $$
 G(t) = 1 - \sum^k_{i=1} p_i^2
@@ -182,8 +182,8 @@ with $i(L)$ and $i(R)$ the impurities of the child nodes and $p_L$ and $p_R$ the
 
 The basic algorithm is actually quite simple:
 
-1. Find all possible splits in dataset
-2. calculate decrease in impurity for each of these splits
+1. Find all possible splits in the dataset
+2. calculate the decrease in impurity for each of these splits
 3. Choose split for which decrease in impurity is maximal
 4. on each half of the split, start this process again
 
@@ -223,6 +223,6 @@ This is only a part of the algorithm, it results in a tree that grows until all 
 I hope you learned something on how to build decision trees, and go check out <a></a>[part 3][4] to see a `Python` implementation of this algorithm.
 
 [1]: https://en.wikipedia.org/wiki/List_of_mathematical_symbols
-[2]: /blog/2019-02-26-what-are-decision-trees
+[2]: /blog/what-are-decision-trees
 [3]: https://www.taylorfrancis.com/books/9781351460491
-[4]: /blog/2019-03-02-lets-implement-CART
+[4]: /blog/lets-implement-CART
