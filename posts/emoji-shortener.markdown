@@ -2,6 +2,7 @@
 title: An emoji URL-shortener
 date:   2020-08-19 
 excerpt_separator: <!--more-->
+draft: true
 ---
 
 This is a little write up of a very small project I did, inspired by the coding train on youtube/twitch:  
