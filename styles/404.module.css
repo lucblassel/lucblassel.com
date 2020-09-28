@@ -1,0 +1,43 @@
+
+.pageContainer {
+    height: 100vh;
+    padding: 0 0.5rem;
+}
+
+.errorContainer {
+    margin: 10rem auto;
+    display: flex;
+    height: 50%;
+    flex-direction: column;
+    text-align: center;
+    justify-content: space-evenly;
+}
+
+.title {
+    font-size: 200%;
+}
+
+.backButton {
+    margin: auto;
+    width: 20%;
+    padding: 1rem 2rem;
+    font-size: 200%;
+    font-weight: bold;
+    border: solid 2px black;
+    border-radius: 20px;
+}
+
+.backButton:hover,
+.backButton:active {
+    color: var(--link-color);
+    border-color: var(--link-color);
+}
+
+.imageContainer {
+    margin: 2rem;
+    color: grey;
+}
+
+.imageContainer img {
+    border-radius: 1rem;
+}

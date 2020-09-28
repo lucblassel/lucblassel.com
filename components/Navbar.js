@@ -20,6 +20,8 @@ export default function NavBar({ active, children }) {
     case "contact":
       contactStyle = styles.active;
       break;
+    default:
+      break;
   }
 
   return (
