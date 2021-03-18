@@ -23,6 +23,7 @@ export default function NavBar({ active, children }) {
       break;
     case "publications":
       publicationStyle = styles.active;
+    default:
       break;
   }
 
