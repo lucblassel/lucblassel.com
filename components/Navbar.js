@@ -6,6 +6,7 @@ export default function NavBar({ active, children }) {
   let aboutStyle = styles.navbutton;
   let stuffStyle = styles.navbutton;
   let contactStyle = styles.navbutton;
+  let publicationStyle = styles.navbutton;
 
   switch (active) {
     case "blog":
@@ -19,6 +20,9 @@ export default function NavBar({ active, children }) {
       break;
     case "contact":
       contactStyle = styles.active;
+      break;
+    case "publications":
+      publicationStyle = styles.active;
       break;
   }
 
@@ -37,6 +41,9 @@ export default function NavBar({ active, children }) {
           </Link>
           <Link href="/stuff">
             <a className={stuffStyle}>Other Stuff</a>
+          </Link>
+          <Link href="/publications">
+            <a className={publicationStyle}>Publications</a>
           </Link>
         </div>
         {/* <div className={styles.rightStick}> */}

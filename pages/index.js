@@ -20,7 +20,6 @@ export default function Home({ allPostsData }) {
     <div className={styles.container}>
       <NewHead>
         <title>Luc Blassel - Home</title>
-        {/* <link rel="icon" href="/icon.svg" /> */}
       </NewHead>
       <ContactButton />
       <main className={styles.main}>
@@ -42,7 +41,7 @@ export default function Home({ allPostsData }) {
           <Link href="/blog">
             <a href="" className={styles.card}>
               <h3>Blog</h3>
-              <p>Some posts I have written</p>
+              <p>Some posts I have written.</p>
             </a>
           </Link>
 
@@ -50,7 +49,16 @@ export default function Home({ allPostsData }) {
             <a href="" className={styles.card}>
               <h3>Other stuff</h3>
               <p>
-                Some other stuff I've done and don't really know where to put.
+                Some other stuff I've done.
+              </p>
+            </a>
+          </Link>
+
+          <Link href="/publications">
+            <a href="" className={styles.card}>
+              <h3>Publications</h3>
+              <p>
+                Publications I've been a part of.
               </p>
             </a>
           </Link>
